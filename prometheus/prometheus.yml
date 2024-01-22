@@ -15,6 +15,10 @@ scrape_configs:
     static_configs:
       - targets: ["localhost:9090"]
 
+  - job_name: nginx
+    static_configs:
+      - targets: ["192.168.122.18:9113"]
+
 alerting:
   alertmanagers:
     - scheme: http
