@@ -1,0 +1,42 @@
+---
+services:
+  grafana:
+    image: grafana/grafana
+    container_name: grafana
+    restart: unless-stopped
+    environment:
+      # - GF_SERVER_ROOT_URL=http://my.grafana.server/
+      # - GF_INSTALL_PLUGINS=grafana-clock-panel
+      - GF_SECURITY_ADMIN_USER=${ADMIN_USER}
+      - GF_SECURITY_ADMIN_PASSWORD=${ADMIN_PASSWORD}
+      - GF_USERS_ALLOW_SIGN_UP=false
+    ports:
+      - "3000:3000"
+    volumes:
+      - "grafana_storage:/var/lib/grafana"
+      - "./grafana/provisioning:/etc/grafana/provisioning"
+
+  prometheus:
+    image: prom/prometheus
+    container_name: prometheus
+    restart: unless-stopped
+    ports:
+      - "9090:9090"
+    volumes:
+      - "prometheus_storage:/prometheus"
+      - "./prometheus:/etc/prometheus"
+
+  alertmanager:
+    image: prom/alertmanager
+    container_name: alertmanager
+    restart: unless-stopped
+    ports:
+      - "9093:9093"
+    volumes:
+      - "alertmanager_storage:/alertmanager"
+      - "./alertmanager:/etc/alertmanager"
+
+volumes:
+  grafana_storage: {}
+  prometheus_storage: {}
+  alertmanager_storage: {}
