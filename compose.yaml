@@ -1,4 +1,3 @@
----
 services:
   grafana:
     image: grafana/grafana
@@ -35,6 +34,11 @@ services:
     volumes:
       - "alertmanager_storage:/alertmanager"
       - "./alertmanager:/etc/alertmanager"
+
+  blackbox:
+    image: prom/blackbox-exporter
+    container_name: blackbox
+    restart: unless-stopped
 
 volumes:
   grafana_storage: {}
