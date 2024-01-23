@@ -16,8 +16,13 @@ scrape_configs:
       - targets: ["localhost:9090"]
 
   - job_name: nginx
+    scrape_interval: 5s
     static_configs:
       - targets: ["192.168.122.18:9113"]
+
+  - job_name: ctfd
+    static_configs:
+      - targets: ["192.168.122.18:2112"]
 
 alerting:
   alertmanagers:
