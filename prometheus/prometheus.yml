@@ -58,4 +58,3 @@ alerting:
       static_configs:
         - targets:
             - "alertmanager:9093"
-
