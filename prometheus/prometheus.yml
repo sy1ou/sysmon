@@ -3,10 +3,10 @@ global:
   scrape_interval: 15s
   evaluation_interval: 15s
 
-  external_labels:
-    monitor: sysmon
+#  external_labels:
+#    monitor: sysmon
 
-rule_files:
+#rule_files:
 #  - "first.rules"
 #  - "my/*.rules"
 
@@ -14,6 +14,14 @@ scrape_configs:
   - job_name: ctfd
     static_configs:
       - targets: ["10.22.9.229:2112"]
+
+  - job_name: node
+    static_configs:
+      - targets: ["10.22.9.229:9100"]
+
+  - job_name: mysqld
+    static_configs:
+      - targets: ["10.22.9.229:9104"]
 
   - job_name: nginx
     static_configs:
@@ -23,11 +31,7 @@ scrape_configs:
     static_configs:
       - targets: ["10.22.9.229:9121"]
 
-  - job_name: mysqld
-    static_configs:
-      - targets: ["10.22.9.229:9104"]
-
-  - job_name: 'blackbox'
+  - job_name: blackbox
     metrics_path: /probe
     params:
       module: [http_2xx]  # Look for a HTTP 200 response.
@@ -43,12 +47,10 @@ scrape_configs:
         replacement: blackbox:9115  # The blackbox exporter's real hostname:port.
 
   - job_name: 'blackbox_exporter'  # collect blackbox exporter's operational metrics.
-    scrape_interval: 30s
     static_configs:
       - targets: ['blackbox:9115']
 
   - job_name: prometheus
-    scrape_interval: 30s
     static_configs:
       - targets: ["localhost:9090"]
 

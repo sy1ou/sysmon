@@ -5,7 +5,6 @@ services:
     restart: unless-stopped
     environment:
       # - GF_SERVER_ROOT_URL=http://my.grafana.server/
-      # - GF_INSTALL_PLUGINS=grafana-clock-panel
       - GF_SECURITY_ADMIN_USER=${ADMIN_USER}
       - GF_SECURITY_ADMIN_PASSWORD=${ADMIN_PASSWORD}
       - GF_USERS_ALLOW_SIGN_UP=false
@@ -16,7 +15,7 @@ services:
       - "./grafana/provisioning:/etc/grafana/provisioning"
 
   prometheus:
-    image: prom/prometheus
+    image: quay.io/prometheus/prometheus
     container_name: prometheus
     restart: unless-stopped
     ports:
@@ -26,7 +25,7 @@ services:
       - "./prometheus:/etc/prometheus"
 
   alertmanager:
-    image: prom/alertmanager
+    image: quay.io/prometheus/alertmanager
     container_name: alertmanager
     restart: unless-stopped
     ports:
@@ -36,7 +35,7 @@ services:
       - "./alertmanager:/etc/alertmanager"
 
   blackbox:
-    image: prom/blackbox-exporter
+    image: quay.io/prometheus/blackbox-exporter
     container_name: blackbox
     restart: unless-stopped
 
