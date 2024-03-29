@@ -13,23 +13,23 @@ global:
 scrape_configs:
   - job_name: ctfd
     static_configs:
-      - targets: ["10.22.148.42:2112"]
+      - targets: ["ctf.hacksecureims.eu:2112"]
 
   - job_name: node
     static_configs:
-      - targets: ["10.22.148.42:9100"]
+      - targets: ["ctf.hacksecureims.eu:9100"]
 
   - job_name: mysqld
     static_configs:
-      - targets: ["10.22.148.42:9104"]
+      - targets: ["ctf.hacksecureims.eu:9104"]
 
   - job_name: nginx
     static_configs:
-      - targets: ["10.22.148.42:9113"]
+      - targets: ["ctf.hacksecureims.eu:9113"]
 
   - job_name: redis
     static_configs:
-      - targets: ["10.22.148.42:9121"]
+      - targets: ["ctf.hacksecureims.eu:9121"]
 
   - job_name: blackbox
     metrics_path: /probe
@@ -37,7 +37,7 @@ scrape_configs:
       module: [http_2xx]  # Look for a HTTP 200 response.
     static_configs:
       - targets:
-        - http://10.22.148.42    # Target to probe with http.
+        - https://ctf.hacksecureims.eu    # Target to probe with http.
     relabel_configs:
       - source_labels: [__address__]
         target_label: __param_target
