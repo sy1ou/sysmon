@@ -893,7 +893,7 @@
           "disableTextWrap": false,
           "editorMode": "builder",
           "exemplar": false,
-          "expr": "ctfd_teams_total",
+          "expr": "ctfd_scoreboard_teams_total",
           "format": "table",
           "fullMetaSearch": false,
           "includeNullMetadata": true,
@@ -1045,13 +1045,13 @@
     ]
   },
   "time": {
-    "from": "now-6h",
+    "from": "now-8h",
     "to": "now"
   },
   "timepicker": {},
   "timezone": "",
   "title": "CTFd dashboard",
   "uid": "a389fa92-3423-4105-ad79-f0a4ffefb9fb",
-  "version": 28,
+  "version": 29,
   "weekStart": ""
 }
