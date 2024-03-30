@@ -282,7 +282,7 @@
             }
           },
           "mappings": [],
-          "unit": "percent"
+          "unit": "none"
         },
         "overrides": []
       },
@@ -296,7 +296,7 @@
       "options": {
         "displayLabels": [
           "name",
-          "value"
+          "percent"
         ],
         "legend": {
           "displayMode": "list",
@@ -1052,6 +1052,6 @@
   "timezone": "",
   "title": "CTFd dashboard",
   "uid": "a389fa92-3423-4105-ad79-f0a4ffefb9fb",
-  "version": 27,
+  "version": 28,
   "weekStart": ""
 }
