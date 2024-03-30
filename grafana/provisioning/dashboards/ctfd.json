@@ -244,12 +244,6 @@
           }
         },
         {
-          "id": "limit",
-          "options": {
-            "limitField": 15
-          }
-        },
-        {
           "id": "sortBy",
           "options": {
             "fields": {},
@@ -259,6 +253,12 @@
                 "field": "Score"
               }
             ]
+          }
+        },
+        {
+          "id": "limit",
+          "options": {
+            "limitField": 15
           }
         }
       ],
@@ -1045,13 +1045,13 @@
     ]
   },
   "time": {
-    "from": "now-3h",
+    "from": "now-6h",
     "to": "now"
   },
   "timepicker": {},
   "timezone": "",
   "title": "CTFd dashboard",
   "uid": "a389fa92-3423-4105-ad79-f0a4ffefb9fb",
-  "version": 26,
+  "version": 27,
   "weekStart": ""
 }
