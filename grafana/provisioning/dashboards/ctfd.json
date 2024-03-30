@@ -415,7 +415,7 @@
       },
       "gridPos": {
         "h": 12,
-        "w": 5,
+        "w": 6,
         "x": 5,
         "y": 16
       },
@@ -556,7 +556,7 @@
       "gridPos": {
         "h": 12,
         "w": 5,
-        "x": 10,
+        "x": 11,
         "y": 16
       },
       "id": 5,
@@ -688,8 +688,8 @@
       },
       "gridPos": {
         "h": 12,
-        "w": 5,
-        "x": 15,
+        "w": 4,
+        "x": 16,
         "y": 16
       },
       "id": 6,
@@ -1026,7 +1026,7 @@
       "type": "grafana-clock-panel"
     }
   ],
-  "refresh": "auto",
+  "refresh": "5s",
   "schemaVersion": 39,
   "tags": [],
   "templating": {
@@ -1052,6 +1052,6 @@
   "timezone": "",
   "title": "CTFd dashboard",
   "uid": "a389fa92-3423-4105-ad79-f0a4ffefb9fb",
-  "version": 24,
+  "version": 26,
   "weekStart": ""
 }
